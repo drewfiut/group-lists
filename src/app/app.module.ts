@@ -26,6 +26,7 @@ import { AddItemComponent } from './components/add-item/add-item.component';
 import { JoinGroupComponent } from './components/join-group/join-group.component';
 import { CreateGroupComponent } from './components/create-group/create-group.component';
 import { LoadingComponent } from './components/loading/loading.component';
+import { DisclosuresComponent } from './components/disclosures/disclosures.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { LoadingComponent } from './components/loading/loading.component';
     JoinGroupComponent,
     CreateGroupComponent,
     LoadingComponent,
+    DisclosuresComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { DisclosuresComponent } from './components/disclosures/disclosures.component';
 import { GroupComponent } from './components/group/group.component';
 import { GroupsRouterComponent } from './components/groups-router/groups-router.component';
 import { GroupsComponent } from './components/groups/groups.component';
@@ -18,6 +19,7 @@ const routes: Routes = [
       { path: ':id', component: GroupComponent },
     ],
   },
+  { path: 'disclosures', component: DisclosuresComponent },
 ];
 
 @NgModule({
