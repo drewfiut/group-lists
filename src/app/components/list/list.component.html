@@ -1,0 +1,15 @@
+<div *ngIf="member$ | async as member" class="card my-3">
+  <div class="card-header d-flex justify-content-center align-items-center">
+    <!-- <img *ngIf="user.photoURL" src="{{ user.photoURL }}" class="img-fluid mr-3 rounded-circle" width="50px" height="50px"> -->
+    <h3>{{ member.name }}</h3>
+  </div>
+  <ul class="list-group list-group-flush">
+    <app-list-item
+      *ngFor="let item of member.list | keyvalue"
+      [item]="item"
+      [user]="member"
+      [current]="current"
+      [group]="group"
+    ></app-list-item>
+  </ul>
+</div>

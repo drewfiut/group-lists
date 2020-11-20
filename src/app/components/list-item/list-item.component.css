@@ -1,0 +1,14 @@
+.list-group-item{
+    cursor: pointer;
+  }
+  .is-complete {
+    text-decoration: line-through;
+    color: rgb(109, 109, 109);
+    background-color: rgba(0, 0, 0, 0.075);
+    cursor: default;
+  }
+  
+  .by-me {
+    background-color: rgb(159, 187, 152);
+    cursor: pointer;
+  }

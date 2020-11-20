@@ -1,0 +1,32 @@
+<div class="style pb-5">
+  <div class="container">
+    <h1 class="display-4 text-center p-3">Welcome to <em>Group Lists!</em></h1>
+    <p class="text-center p-3 mb-0">
+      Here you can join groups with your friends and family to compare and cross
+      off each others lists!
+      <br />
+      This is perfect for the holidays, or uses like baby or wedding registries!
+    </p>
+    <div
+      *ngIf="this.auth.user$ | async as user; else login"
+      class="text-center"
+    >
+      <button class="btn btn-primary btn-lg" routerLink="/groups">
+        See your Groups
+      </button>
+      <app-create-group></app-create-group>
+      <app-join-group></app-join-group>
+    </div>
+    <ng-template #login>
+      <div class="text-center">
+        <h3>Sign In to start creating Groups!!</h3>
+        <button
+          (click)="auth.googleSignin()"
+          class="btn btn-primary text-center m-2 btn-lg"
+        >
+          Sign In
+        </button>
+      </div>
+    </ng-template>
+  </div>
+</div>

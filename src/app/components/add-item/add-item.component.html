@@ -1,0 +1,17 @@
+<form (ngSubmit)="onSubmit()">
+    <div class="form-row m-2 text-center">
+        <div class="col-sm-5 p-1">
+            <input type="text" name="name" required [(ngModel)]="name" placeholder="Item" class="form-control">
+        </div>
+        <div class="col-sm-5 p-1">
+            <input type="text" name="link" [(ngModel)]="link" placeholder="Link (optional)" class="form-control">
+        </div>
+        <div class="col-sm-2 p-1">
+            <input type="submit" value="Submit" class="btn btn-primary">
+        </div>
+        
+    </div>    
+    
+    
+</form>
+

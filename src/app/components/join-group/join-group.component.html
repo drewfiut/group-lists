@@ -1,0 +1,25 @@
+<div *ngIf="auth.user$ | async as user" class="text-center card my-5">
+  <div class="card-header">
+    <h3>Need to join a group??</h3>
+    <h5>Enter the code below!</h5>
+  </div>
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit(user)">
+      <div class="form-row d-flex justify-content-center">
+        <div class="col-auto">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Join Code"
+            [(ngModel)]="code"
+            name="code"
+          />
+        </div>
+        <div class="col-auto">
+          <input type="submit" value="Join" class="btn btn-primary" />
+        </div>
+      </div>
+    </form>
+    <div class="feedback">{{ error }}</div>
+  </div>
+</div>

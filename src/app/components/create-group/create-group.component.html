@@ -1,0 +1,36 @@
+<div *ngIf="auth.user$ | async as user" class="card my-5">
+  <div class="card-header text-center">
+    <h2>Create a new group!</h2>
+  </div>
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit(user)">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input
+          id="name"
+          type="text"
+          class="form-control"
+          placeholder="Name"
+          [(ngModel)]="name"
+          name="name"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="desc">Description</label>
+
+        <input
+          id="desc"
+          type="textarea"
+          class="form-control"
+          placeholder="Description"
+          [(ngModel)]="desc"
+          name="desc"
+          required
+        />
+      </div>
+
+      <input type="submit" value="Create" class="btn btn-primary" />
+    </form>
+  </div>
+</div>
