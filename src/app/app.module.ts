@@ -27,6 +27,8 @@ import { JoinGroupComponent } from './components/join-group/join-group.component
 import { CreateGroupComponent } from './components/create-group/create-group.component';
 import { LoadingComponent } from './components/loading/loading.component';
 import { DisclosuresComponent } from './components/disclosures/disclosures.component';
+import { SigninComponent } from './components/auth/signin/signin.component';
+import { SignupComponent } from './components/auth/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +50,8 @@ import { DisclosuresComponent } from './components/disclosures/disclosures.compo
     CreateGroupComponent,
     LoadingComponent,
     DisclosuresComponent,
+    SigninComponent,
+    SignupComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { SigninComponent } from './components/auth/signin/signin.component';
+import { SignupComponent } from './components/auth/signup/signup.component';
 import { DisclosuresComponent } from './components/disclosures/disclosures.component';
 import { GroupComponent } from './components/group/group.component';
 import { GroupsRouterComponent } from './components/groups-router/groups-router.component';
@@ -10,6 +12,8 @@ import { AuthGuard } from './guards/auth.guard';
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
+  { path: 'signin', component: SigninComponent },
+  { path: 'signup', component: SignupComponent },
   {
     path: 'groups',
     component: GroupsRouterComponent,

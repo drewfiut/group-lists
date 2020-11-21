@@ -36,7 +36,20 @@ export class AuthService {
   async googleSignin() {
     const provider = new firebase.auth.GoogleAuthProvider();
     const credential = await this.afAuth.signInWithPopup(provider);
+    this.router.navigate(['home']);
     return this.updateUserData(credential.user);
+  }
+
+  async emailSignin(email, password) {
+    return await this.afAuth.signInWithEmailAndPassword(email, password);
+  }
+
+  async emailSignup(name, email, password) {
+    const credential = await this.afAuth.createUserWithEmailAndPassword(
+      email,
+      password
+    );
+    return this.updateUserData(credential.user, name);
   }
 
   async signout() {
@@ -44,14 +57,16 @@ export class AuthService {
     return this.router.navigate(['home']);
   }
 
-  private updateUserData(user) {
+  private updateUserData(user, name?) {
     const userRef: AngularFirestoreDocument<any> = this.afs.doc(
       `users/${user.uid}`
     );
 
+    const displayName = name ? name : user.displayName;
+
     const data = {
       uid: user.uid,
-      displayName: user.displayName,
+      displayName: displayName,
       photoURL: user.photoURL,
       email: user.email,
     };

@@ -20,12 +20,12 @@
     <ng-template #login>
       <div class="text-center">
         <h3>Sign In to start creating Groups!!</h3>
-        <button
-          (click)="auth.googleSignin()"
-          class="btn btn-primary text-center m-2 btn-lg"
-        >
+        <a routerLink="/signin" class="btn btn-primary text-center m-2 btn-lg">
           Sign In
-        </button>
+        </a>
+        <a routerLink="/signup" class="btn btn-primary text-center m-2 btn-lg">
+          Sign Up
+        </a>
       </div>
     </ng-template>
   </div>
