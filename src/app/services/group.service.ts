@@ -106,4 +106,8 @@ export class GroupService {
       .doc(`groups/${group.id}`)
       .update({ members: firebase.firestore.FieldValue.arrayRemove(user.uid) });
   }
+
+  deleteGroup(group) {
+    this.afs.doc(`/groups/${group.id}`).delete();
+  }
 }

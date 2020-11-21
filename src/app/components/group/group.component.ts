@@ -21,7 +21,6 @@ export class GroupComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    console.log('init');
     this.route.paramMap.subscribe((params) => {
       this.id = params.get('id');
     });
@@ -32,6 +31,11 @@ export class GroupComponent implements OnInit {
 
   onLeave(user, group) {
     this.groupService.leaveGroup(user, group);
-    this.router.navigate(['groups']);
+    this.router.navigate(['/groups']);
+  }
+
+  onDelete(group) {
+    this.groupService.deleteGroup(group);
+    this.router.navigate(['/groups']);
   }
 }
