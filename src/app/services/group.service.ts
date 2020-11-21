@@ -108,6 +108,9 @@ export class GroupService {
   }
 
   deleteGroup(group) {
+    group.members.forEach((element) => {
+      this.afs.doc(`/groups/${group.id}/members/${element}`).delete();
+    });
     this.afs.doc(`/groups/${group.id}`).delete();
   }
 }
