@@ -29,6 +29,8 @@ import { LoadingComponent } from './components/loading/loading.component';
 import { DisclosuresComponent } from './components/disclosures/disclosures.component';
 import { SigninComponent } from './components/auth/signin/signin.component';
 import { SignupComponent } from './components/auth/signup/signup.component';
+import { ErrorComponent } from './components/error/error.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +54,8 @@ import { SignupComponent } from './components/auth/signup/signup.component';
     DisclosuresComponent,
     SigninComponent,
     SignupComponent,
+    ErrorComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,

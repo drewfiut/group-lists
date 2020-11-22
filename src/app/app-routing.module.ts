@@ -3,10 +3,12 @@ import { Routes, RouterModule } from '@angular/router';
 import { SigninComponent } from './components/auth/signin/signin.component';
 import { SignupComponent } from './components/auth/signup/signup.component';
 import { DisclosuresComponent } from './components/disclosures/disclosures.component';
+import { ErrorComponent } from './components/error/error.component';
 import { GroupComponent } from './components/group/group.component';
 import { GroupsRouterComponent } from './components/groups-router/groups-router.component';
 import { GroupsComponent } from './components/groups/groups.component';
 import { HomeComponent } from './components/home/home.component';
+import { ProfileComponent } from './components/profile/profile.component';
 import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
@@ -14,6 +16,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'signin', component: SigninComponent },
   { path: 'signup', component: SignupComponent },
+  { path: 'profile', component: ProfileComponent },
   {
     path: 'groups',
     component: GroupsRouterComponent,
@@ -24,6 +27,7 @@ const routes: Routes = [
     ],
   },
   { path: 'disclosures', component: DisclosuresComponent },
+  { path: '**', component: ErrorComponent },
 ];
 
 @NgModule({
