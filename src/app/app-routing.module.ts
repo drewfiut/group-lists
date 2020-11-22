@@ -16,7 +16,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'signin', component: SigninComponent },
   { path: 'signup', component: SignupComponent },
-  { path: 'profile', component: ProfileComponent },
+  { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
   {
     path: 'groups',
     component: GroupsRouterComponent,
