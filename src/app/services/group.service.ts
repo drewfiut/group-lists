@@ -1,9 +1,8 @@
-import { Injectable } from '@angular/core';
+import { Injectable, SimpleChange } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import firebase from 'firebase/app';
 
 import { map } from 'rxjs/operators';
-import { AuthService } from './auth.service';
 
 @Injectable({
   providedIn: 'root',
@@ -71,9 +70,25 @@ export class GroupService {
     this.afs.doc('groups/' + group.id + '/members/' + user.uid).update(update);
   }
 
-  joinGroup(code, user) {
-    var groupRef = this.afs.doc(`groups/${code}`);
+  async joinGroup(code, user): Promise<any> {
+    await firebase
+      .firestore()
+      .doc(`groups/${code}`)
+      .get()
+      .then((doc) => {
+        var data = doc.data();
+        if (!data) {
+          throw 'no group';
+        } else if (data.members.indexOf(user.uid) > -1) {
+          throw 'already in group';
+        } else {
+          return this.join(code, user);
+        }
+      });
+  }
 
+  private join(code, user): Promise<any> {
+    var groupRef = this.afs.doc(`groups/${code}`);
     groupRef
       .collection(`/members`)
       .doc(user.uid)
@@ -96,7 +111,7 @@ export class GroupService {
       .doc(`groups/${id}`)
       .set(docData)
       .then((val) => {
-        this.joinGroup(id, user);
+        this.join(id, user);
       });
   }
 

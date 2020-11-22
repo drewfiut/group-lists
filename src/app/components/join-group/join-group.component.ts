@@ -25,8 +25,12 @@ export class JoinGroupComponent implements OnInit {
       .joinGroup(this.code, user)
       .then((val) => this.router.navigate(['groups']))
       .catch((err) => {
-        if (err.code === 'not-found') {
+        if (err === 'no group') {
           this.error = "This group doesn't exist!";
+        } else if (err == 'already in group') {
+          this.error = "You're already in this group!!";
+        } else {
+          console.log({ err });
         }
       });
   }
