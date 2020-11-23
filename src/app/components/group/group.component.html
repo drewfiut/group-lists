@@ -1,4 +1,4 @@
-<div *ngIf="group$ | async as group; else loading" class="component">
+<div *ngIf="group$ | async as group; else loading" class="component pb-4">
   <div *ngIf="auth.user$ | async as user">
     <div class="header text-center">
       <h2 class="text-center">{{ group.name }}</h2>
@@ -35,6 +35,7 @@
         ></app-list>
       </div>
       <app-my-list [user]="user" [group]="group" class="col-6"></app-my-list>
+      <app-chat [group]="group.id" [user]="user"></app-chat>
     </div>
 
     <!-- leave modal -->

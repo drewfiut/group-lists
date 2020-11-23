@@ -5,6 +5,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -31,6 +32,8 @@ import { SigninComponent } from './components/auth/signin/signin.component';
 import { SignupComponent } from './components/auth/signup/signup.component';
 import { ErrorComponent } from './components/error/error.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { ChatComponent } from './components/chat/chat.component';
+import { from } from 'rxjs';
 
 @NgModule({
   declarations: [
@@ -56,6 +59,7 @@ import { ProfileComponent } from './components/profile/profile.component';
     SignupComponent,
     ErrorComponent,
     ProfileComponent,
+    ChatComponent,
   ],
   imports: [
     BrowserModule,
@@ -64,6 +68,7 @@ import { ProfileComponent } from './components/profile/profile.component';
     AngularFireAnalyticsModule,
     AngularFirestoreModule,
     AngularFireAuthModule,
+    AngularFireDatabaseModule,
     FormsModule,
   ],
   providers: [],

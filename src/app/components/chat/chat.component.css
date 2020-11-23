@@ -1,0 +1,9 @@
+.scroll {
+  max-height: 500px;
+  overflow-y: auto;
+  font-size: 1.1rem;
+}
+
+.date {
+  font-size: 0.8rem;
+}

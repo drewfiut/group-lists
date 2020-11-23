@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "group-lists-a2f1b"
+  },
+  "targets": {
+    "group-lists-a2f1b": {
+      "hosting": {
+        "group-lists": [
+          "group-lists-a2f1b"
+        ]
+      }
+    }
   }
 }
