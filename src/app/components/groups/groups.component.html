@@ -1,6 +1,9 @@
 <div *ngIf="groups$ | async as groups; else loading" class="component">
+  <div class="jumbotron jumbotron-fluid p-5 m-0">
+    <h2 class="text-center">Groups</h2>
+  </div>
+
   <div class="container p-4">
-    <h3 class="text-center">Groups that you are in!</h3>
     <div class="row">
       <div *ngFor="let group of groups" class="col-12 col-sm-6 col-md-4 my-3">
         <div class="card">

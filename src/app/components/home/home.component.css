@@ -1,5 +1,9 @@
 .style {
-    background-color: rgba(107, 143, 102, 0.712);
-    margin: 0;
-    padding: 0;
+  background-color: rgba(107, 143, 102, 0.712);
+  margin: 0;
+  padding: 0;
+}
+
+.jumbotron {
+  background-color: rgb(192, 191, 255);
 }
